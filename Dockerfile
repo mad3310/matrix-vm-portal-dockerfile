@@ -1,7 +1,6 @@
 FROM 10.160.140.32:5000/letv-jetty-base-ip:0.0.1
 MAINTAINER liuhao <liuhao1@letv.com>
 
-RUN rpm -ivh http://pkg-repo.oss.letv.com/pkgs/centos6/letv-release.noarch.rpm 
 RUN yum install java-1.6.0-openjdk-devel -y
 RUN rm -f /opt/letv/jetty/contexts/test.xml
 
@@ -21,4 +20,4 @@ RUN chmod 755 /etc/init.d/gbalancer
 RUN chmod 755 /opt/letv/init.sh
 
 
-ENTRYPOINT bash /opt/letv/init.sh && /bin/bash
+ENTRYPOINT bash /opt/letv/init.sh &&/root/init_net.sh && service jetty-manager restart && /salt_minion_init.sh  && service gbalancer-manager start&& /bin/bash
