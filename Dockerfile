@@ -13,12 +13,11 @@ ADD ./file/jetty-nosql-memcached-0.3.0-jar-with-dependencies.jar /opt/letv/jetty
 ADD ./file/jettyapp.xml /opt/letv/jetty/etc/jetty.xml
 ADD ./file/jetty-web.xml /opt/letv/jetty/jetty-web.xml
 
-ADD -f ./file/3306configuration.json /etc/gbalancer/3306configuration.json
+ADD ./file/3306configuration.json /etc/gbalancer/3306configuration.json
 ADD ./file/init.sh /opt/letv/init.sh
 
 RUN chmod 755 /etc/init.d/jetty
 RUN chmod 755 /etc/init.d/gbalancer
-RUN chmod 755 /opt/letv/jetty/cu.sh
 RUN chmod 755 /opt/letv/init.sh
 
 
