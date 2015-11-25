@@ -12,12 +12,9 @@ ADD ./file/jetty-nosql-memcached-0.3.0-jar-with-dependencies.jar /opt/letv/jetty
 ADD ./file/jettyapp.xml /opt/letv/jetty/etc/jetty.xml
 ADD ./file/jetty-web.xml /opt/letv/jetty/jetty-web.xml
 
-ADD ./file/3306configuration.json /etc/gbalancer/3306configuration.json
 ADD ./file/init.sh /opt/letv/init.sh
 
-RUN chmod 755 /etc/init.d/jetty
-RUN chmod 755 /etc/init.d/gbalancer
 RUN chmod 755 /opt/letv/init.sh
 
 
-ENTRYPOINT bash /opt/letv/init.sh &&/root/init_net.sh && service jetty-manager restart && /salt_minion_init.sh  && service gbalancer-manager start&& /bin/bash
+ENTRYPOINT bash /root/init_net.sh && service jetty-manager restart && /salt_minion_init.sh  && service gbalancer-manager start&& /opt/letv/init.sh && /bin/bash
