@@ -1,6 +1,11 @@
 FROM 10.160.140.32:5000/letv-jetty-base-ip:0.0.1
 MAINTAINER liuhao <liuhao1@letv.com>
 
+RUN rpm -e java-1.7.0-openjdk-devel.x86_64
+RUN rpm -e java-1.7.0-openjdk.x86_64
+RUN rpm -e java-1.7.0-openjdk-demo.x86_64
+RUN rpm -e java-1.7.0-openjdk-src.x86_64
+
 RUN yum install java-1.6.0-openjdk-devel -y
 RUN rm -f /opt/letv/jetty/contexts/test.xml
 
