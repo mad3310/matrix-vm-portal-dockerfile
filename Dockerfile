@@ -1,6 +1,7 @@
 FROM 10.160.140.32:5000/letv-jetty-base-ip:0.0.1
 MAINTAINER liuhao <liuhao1@letv.com>
 
+RUN yum install java-1.6.0-openjdk-devel -y
 RUN rm -f /opt/letv/jetty/contexts/test.xml
 
 USER root
