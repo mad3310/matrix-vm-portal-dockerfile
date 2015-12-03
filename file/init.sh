@@ -13,4 +13,4 @@ ln -s /usr/lib/jvm/java-1.6.0-openjdk.x86_64/bin/javac javac
 
 umount /etc/hosts
 echo -e "10.176.127.32 matrix.letvcloud.com" >> /etc/hosts
-echo -e "10.150.149.34 uc.letvcloud.com" >> /etc/hosts
+echo -e "10.150.149.37 uc.letvcloud.com" >> /etc/hosts
