@@ -8,9 +8,7 @@ USER root
 
 ADD ./file/lcp.war /opt/letv/jetty/webapps/lcp.war 
 ADD ./file/lcp.xml /opt/letv/jetty/contexts/lcp.xml
-ADD ./file/jetty-nosql-memcached-0.3.0-jar-with-dependencies.jar /opt/letv/jetty/lib/ext/jetty-nosql-memcached-0.3.0-jar-with-dependencies.jar
 ADD ./file/jettyapp.xml /opt/letv/jetty/etc/jetty.xml
-ADD ./file/jetty-web.xml /opt/letv/jetty/jetty-web.xml
 
 ADD ./file/init.sh /opt/letv/init.sh
 

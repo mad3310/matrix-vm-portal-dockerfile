@@ -75,16 +75,4 @@
     <Set name="gracefulShutdown">1000</Set>
     <Set name="dumpAfterStart">false</Set>
     <Set name="dumpBeforeStop">false</Set>
-
-	<Set name="sessionIdManager">
-    <New id="memcachedSessionIdManager" class="org.eclipse.jetty.nosql.memcached.MemcachedSessionIdManager">
-      <Arg><Ref id="Server" /></Arg>
-      <Set name="serverString">10.154.28.163:11211</Set>
-      <Set name="keyPrefix">session_app:</Set>
-    </New>
-    </Set>
-    <Call name="setAttribute">
-    <Arg>memcachedSessionIdManager</Arg>
-    <Arg><Ref id="memcachedSessionIdManager" /></Arg>
-    </Call>
 </Configure>
