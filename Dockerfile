@@ -1,4 +1,4 @@
-FROM 10.160.140.32:5000/letv-jetty-base-ip:0.0.1
+FROM 10.160.140.32:5000/jetty-base-ip:0.0.1
 MAINTAINER zhoubin0722_cn <zhoubin0722_cn@sina.com>
 
 RUN yum install java-1.6.0-openjdk-devel -y
