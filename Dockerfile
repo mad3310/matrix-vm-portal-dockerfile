@@ -1,18 +1,18 @@
 FROM 10.160.140.32:5000/letv-jetty-base-ip:0.0.1
-MAINTAINER liuhao <liuhao1@letv.com>
+MAINTAINER zhoubin0722_cn <zhoubin0722_cn@sina.com>
 
 RUN yum install java-1.6.0-openjdk-devel -y
-RUN rm -f /opt/letv/jetty/contexts/test.xml
+RUN rm -f /opt/jetty/contexts/test.xml
 
 USER root
 
-ADD ./file/lcp.war /opt/letv/jetty/webapps/lcp.war 
-ADD ./file/lcp.xml /opt/letv/jetty/contexts/lcp.xml
-ADD ./file/jettyapp.xml /opt/letv/jetty/etc/jetty.xml
+ADD ./file/lcp.war /opt/jetty/webapps/lcp.war 
+ADD ./file/lcp.xml /opt/jetty/contexts/lcp.xml
+ADD ./file/jettyapp.xml /opt/jetty/etc/jetty.xml
 
-ADD ./file/init.sh /opt/letv/init.sh
+ADD ./file/init.sh /opt/init.sh
 
-RUN chmod 755 /opt/letv/init.sh
+RUN chmod 755 /opt/init.sh
 
 
-ENTRYPOINT bash /root/init_net.sh && service jetty-manager restart && /salt_minion_init.sh  && service moxi-manager start && service gbalancer-manager start && /opt/letv/init.sh && /bin/bash
+ENTRYPOINT bash /root/init_net.sh && service jetty-manager restart && /salt_minion_init.sh  && service moxi-manager start && service gbalancer-manager start && /opt/init.sh && /bin/bash
